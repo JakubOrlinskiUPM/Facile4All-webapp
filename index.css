@@ -78,7 +78,7 @@ header {
     width: fill-available;
 
     border-radius: var(--border-radius);
-    border-color: #6b6b6b;
+    border: 1px solid #6b6b6b;
 
     box-shadow: 10px 10px 10px #dbdee7;
 }
@@ -138,6 +138,13 @@ header {
     }
 }
 
+.changed {
+    background: #83d983;
+    font-weight: bold;
+}
+
 footer {
     margin: 3rem;
+    display: flex;
+    justify-content: center;
 }

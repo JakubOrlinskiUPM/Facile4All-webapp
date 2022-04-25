@@ -1,14 +1,17 @@
 
+function transformDummy(text) {
+	return text.replace("inesperadamente", "manera inesperada");
+}
 
 async function transformText() {
 	const input = document.querySelector("#original");
 	const output = document.querySelector("#output");
 	const originalText = input.value;
-	const outputText = input.value;
+	const outputText = transformDummy(input.value);
 
 	await new Promise(resolve => setTimeout(resolve, 1000));
 
-	output.value = outputText;
+	output.innerHTML = getHTML(originalText, outputText);
 }
 
 function prepareActionButton() {
@@ -20,8 +23,56 @@ function prepareActionButton() {
 	}
 }
 
+function getHTML(input, output) {
+	let outputHTML = ""
+	const splitText = ".";
+	let originalHTMLSent = input.split(splitText);
+	let originalSent = input.split(splitText);
+	let simplifiedSent = output.split(splitText);
+
+	for (const idx in originalSent.filter((x) => x.length > 0)) {
+		if (originalSent[idx] === simplifiedSent[idx]) {
+			outputHTML += originalHTMLSent[idx] + splitText;
+		} else {
+			let originalText = originalSent[idx] + splitText;
+			let outputText = simplifiedSent[idx] + splitText;
+			outputHTML += getTooltipText(originalText, outputText)
+		}
+	}
+
+	return outputHTML;
+}
+
+function getTooltipText(originalText, outputText) {
+	let outputHTML = "";
+
+	const intersection = (array1, array2) => {
+		const set2 = new Set(array2);
+		return array1.filter(x => set2.has(x));
+	};
+
+	const splitStr = " ";
+	let orgSplit = originalText.split(splitStr);
+	let outSplit = outputText.split(splitStr);
+	const intersection_idx_out = intersection(outSplit, orgSplit);
+	for (const idx in outSplit) {
+		if (intersection_idx_out.includes(outSplit[idx])) {
+			outputHTML += outSplit[idx] + splitStr;
+		} else {
+			outputHTML += "<span class='changed'>" + outSplit[idx] + splitStr + "</span>";
+		}
+	}
+	return outputHTML;
+}
+
+
+function enterDummyData() {
+	const input = document.getElementById("original");
+	input.value = "Se requiere de una evaluación experta para combinar acertijos de comportamiento para poder crear una imagen inesperadamente nueva.";
+}
 
 function main() {
+	enterDummyData();
 	prepareActionButton();
 }
 
