@@ -48,7 +48,6 @@ header {
 }
 
 .transformation__container {
-    /*background: var(--background-grey);*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -76,6 +75,7 @@ header {
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
+    max-width: 40%;
 
     border-radius: var(--border-radius);
     border: 1px solid #6b6b6b;
