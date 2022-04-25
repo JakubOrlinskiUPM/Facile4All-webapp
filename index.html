@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facile4All</title>
+    <script src="index.js"></script>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <img id="logo" src="images/logo.png">
+    </header>
+
+    <div id="main-content">
+        <div class="transformation__container">
+            <label class="transformation__label original">Texto demasiado difícil
+                <textarea class="transformation__input" id="original"></textarea>
+            </label>
+            <div class="transformation__action__container">
+                <button class="btn transformation__action">
+                    Más fácil
+                    <div class="loader hidden"><div></div><div></div><div></div><div></div></div>
+                </button>
+            </div>
+            <label class="transformation__label output">Texto fácil
+                <textarea class="transformation__input" id="output" readonly></textarea>
+            </label>
+        </div>
+
+        <div>
+        </div>
+    </div>
+
+    <footer>Ontology Engineering Group</footer>
+
+</div>
+
+</body>
+</html>
