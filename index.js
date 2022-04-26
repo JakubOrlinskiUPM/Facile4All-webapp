@@ -14,12 +14,31 @@ async function transformText() {
 	output.innerHTML = getHTML(originalText, outputText);
 }
 
+function toggleView() {
+	const input = document.querySelector(".transformation__label.original");
+	const output = document.querySelector(".transformation__label.output");
+	input.classList.toggle("hidden");
+	output.classList.toggle("hidden");
+
+	const button = document.querySelector(".transformation__action");
+	const buttonAlt = document.querySelector(".transformation__action-alt");
+	button.classList.toggle("hidden");
+	buttonAlt.classList.toggle("hidden");
+}
+
 function prepareActionButton() {
 	const button = document.querySelector(".transformation__action");
 	button.onclick = async () => {
-		button.querySelector(".loader").classList.remove("hidden");
+		document.querySelector(".loading").classList.remove("hidden");
 		await transformText();
-		button.querySelector(".loader").classList.add("hidden");
+		document.querySelector(".loading").classList.add("hidden");
+		toggleView();
+	}
+	const buttonAlt = document.querySelector(".transformation__action-alt");
+	buttonAlt.onclick = async () => {
+		const input = document.getElementById("original");
+		input.value = "";
+		toggleView();
 	}
 }
 

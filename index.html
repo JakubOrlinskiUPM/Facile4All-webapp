@@ -6,7 +6,6 @@
     <script src="index.js"></script>
     <meta name="viewport" content="initial-scale=1">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="loader.css">
     <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
@@ -14,23 +13,41 @@
 <div class="container">
 
     <header>
-        <img id="logo" src="images/logo.png">
+        <img id="logo" src="images/logo.png" alt="Facile4All logo">
     </header>
 
     <div id="main-content">
+        <div class="explanation__container">
+            <h3>Qué es Facile4All?</h3>
+            <p>Facile4All es una aplicación que ayuda a leer los textos difíciles.</p>
+
+            <h3>Cómo funciona Facile4All?</h3>
+            <p>
+                Copia tu texto en el cuadro de abajo.
+                <br>
+                Pulsa el botón para ver el texto más fácil.
+                <br>
+                Las palabras cambiadas tienen un <span class="changed">fondo verde</span>.
+            </p>
+        </div>
         <div class="transformation__container">
             <label class="transformation__label original">Texto demasiado difícil
-                <textarea class="transformation__input" id="original"></textarea>
+                <textarea class="transformation__input" id="original" placeholder="Pon tu texto aquí."></textarea>
+            </label>
+            <label class="transformation__label output hidden">Texto fácil
+                <span class="transformation__input" id="output"></span>
             </label>
             <div class="transformation__action__container">
+                <span class="loading hidden">Cargando...</span>
                 <button class="btn transformation__action">
                     Más fácil
-                    <div class="loader hidden"><div></div><div></div><div></div><div></div></div>
+                    <img class="pointer" src="images/cursor-pointer.png" alt="Indicador del cursor">
+                </button>
+                <button class="btn transformation__action-alt hidden">
+                    Otro texto
+                    <img class="pointer" src="images/cursor-pointer.png" alt="Indicador del cursor">
                 </button>
             </div>
-            <label class="transformation__label output">Texto fácil
-                <div class="transformation__input" id="output"></div>
-            </label>
         </div>
 
         <div>
