@@ -52,11 +52,28 @@ header {
     margin-right: 1.5rem;
 }
 
+.explanations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .explanation__container {
     background: white;
     border-radius: var(--border-radius);
     padding: 1rem;
-    margin-bottom: 2rem;
+    margin: 1rem;
+    max-width: 40%;
+}
+
+@media only screen and (max-width: 550px) {
+    .explanations {
+        flex-wrap: wrap;
+    }
+
+    .explanation__container {
+        max-width: 100%;
+    }
 }
 
 .transformation__container {
