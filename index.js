@@ -1,5 +1,9 @@
 
 function transformDummy(text) {
+	text = text.replace(
+		"El martillo es usado por Juan en su trabajo.",
+		"Juan usa el martillo en su trabajo."
+	);
 	return text.replace("inesperadamente", "manera inesperada");
 }
 
@@ -87,7 +91,7 @@ function getTooltipText(originalText, outputText) {
 
 function enterDummyData() {
 	const input = document.getElementById("original");
-	input.value = "Se requiere de una evaluación experta para combinar acertijos de comportamiento para poder crear una imagen inesperadamente nueva.";
+	input.value = "El martillo es usado por Juan en su trabajo.\n\nSe requiere de una evaluación experta para combinar acertijos de comportamiento para poder crear una imagen inesperadamente nueva.";
 }
 
 function main() {
