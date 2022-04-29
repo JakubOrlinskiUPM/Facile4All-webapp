@@ -21,40 +21,36 @@
         <div class="explanations">
             <div class="explanation__container">
                 <h3>Qué es Facile4All?</h3>
-                <p>Facile4All es una aplicación que ayuda a leer los textos difíciles.</p>
+                <p>Facile4All es una aplicación que adapta textos a un lenguaje simple y accesible.</p>
             </div>
             <div class="explanation__container">
-                <h3>Cómo funciona Facile4All?</h3>
+                <h3>Cómo puedes usar Facile4All?</h3>
                 <p>
-                    Copia tu texto en el cuadro de abajo.
-                    <br>
-                    Pulsa el botón para ver el texto más fácil.
-                    <br>
-                    Las palabras cambiadas tienen un <span class="changed">fondo verde</span>.
+                    Escribe o pega tu texto en el cuadro 'Texto Original'.<br>
+                    Pulsa el botón 'Adapta'.<br>
+                    El texto sencillo aparece en el cuadro 'Texto Adaptado'.<br>
+                    Los cambios realizados tienen un <span class="changed">fondo verde</span>.<br>
                 </p>
             </div>
         </div>
         <div class="transformation__container">
-            <label class="transformation__label original">Texto demasiado difícil
+            <label class="transformation__label original">Texto Original
                 <textarea class="transformation__input" id="original" placeholder="Pon tu texto aquí."></textarea>
             </label>
-            <label class="transformation__label output hidden">Texto fácil
+            <label class="transformation__label output">Texto Adaptado
                 <span class="transformation__input" id="output"></span>
             </label>
-            <div class="transformation__action__container">
-                <span class="loading hidden">Cargando...</span>
-                <button class="btn transformation__action">
-                    Más fácil
-                    <img class="pointer" src="images/cursor-pointer.png" alt="Indicador del cursor">
-                </button>
-                <button class="btn transformation__action-alt hidden">
-                    Otro texto
-                    <img class="pointer" src="images/cursor-pointer.png" alt="Indicador del cursor">
-                </button>
-            </div>
         </div>
-
-        <div>
+        <div class="transformation__action__container">
+            <span class="loading hidden">Cargando...</span>
+            <button class="btn transformation__action">
+                Adapta
+                <img class="pointer" src="images/cursor-pointer.png" alt="Indicador del cursor">
+            </button>
+            <button class="btn transformation__action-alt hidden">
+                Otro texto
+                <img class="pointer" src="images/cursor-pointer.png" alt="Indicador del cursor">
+            </button>
         </div>
     </div>
 

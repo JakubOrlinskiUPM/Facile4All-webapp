@@ -55,6 +55,9 @@ header {
     margin-right: 1.5rem;
     padding: 2rem;
     padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .explanations {
@@ -78,6 +81,7 @@ header {
     .explanations {
         flex-wrap: wrap;
     }
+
     .explanations > * + * {
         margin-left: 0;
         margin-top: 1rem;
@@ -86,9 +90,10 @@ header {
 
 .transformation__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .transformation__label,
@@ -96,16 +101,33 @@ header {
     display: block;
 }
 
+.transformation__container > * + * {
+    margin-left: 1rem;
+    margin-top: 0;
+}
+
 .transformation__label {
     flex-grow: 1;
-    width: 100%;
+    width: 40%;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .transformation__label {
+        width: 100%;
+    }
+
+    .transformation__container > * + * {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
 }
 
 .transformation__input {
     padding: 0.6rem;
     resize: none;
+    height: 8rem;
 
 
     width: 100%;
@@ -115,12 +137,12 @@ header {
 
     border-radius: var(--border-radius);
     border: 1px solid #6b6b6b;
+    overflow: scroll;
 
     box-shadow: 10px 10px 10px #dbdee7;
 }
 
 .transformation__input#original {
-    min-height: 8rem;
 }
 
 .transformation__input#original:focus {
@@ -137,7 +159,6 @@ header {
 
 .transformation__input#output:focus {
     outline: none !important;
-    overflow: scroll;
 }
 
 
@@ -149,6 +170,7 @@ header {
 .transformation__action__container {
     width: auto;
     display: flex;
+    align-self: center;
     flex-direction: column;
     justify-content: center;
 }

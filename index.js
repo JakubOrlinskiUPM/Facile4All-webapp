@@ -19,11 +19,6 @@ async function transformText() {
 }
 
 function toggleView() {
-	const input = document.querySelector(".transformation__label.original");
-	const output = document.querySelector(".transformation__label.output");
-	input.classList.toggle("hidden");
-	output.classList.toggle("hidden");
-
 	const button = document.querySelector(".transformation__action");
 	const buttonAlt = document.querySelector(".transformation__action-alt");
 	button.classList.toggle("hidden");
